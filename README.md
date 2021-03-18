@@ -6,7 +6,7 @@
 - Recommended: **API level 30** (R)
 <br/><br/><br/><br/>
 ## 📑 Commit Convention
-관련된 좋은 글: https://chris.beams.io/posts/git-commit/
+📌 [관련된 좋은 글](https://chris.beams.io/posts/git-commit)
 <br/>
 |명령어|내용|
 | :-----------------------------------: | :---------------------------------------: |
