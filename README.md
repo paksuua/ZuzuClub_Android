@@ -25,7 +25,7 @@
 
 <br/><br/><br/>
 ### 🔀 Git Flow
-📌[참고 글](https://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html)
+📌[참고 - 우아한 형제들 기술블로그](https://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html)
 <br/>
 branch - ```master```  
 working on - ```soyeon``` ```suyeon``` ```jaekyeong```
