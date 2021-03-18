@@ -1,12 +1,12 @@
 # 주주클럽 (Android-Team-2-Frontend)
 열일하는 안드로이드🐜🐜🐜 Repository
-<br/><br/><br/>
+<br/><br/>
 ## ✔ Target Version
 - Minimum : API level 23 (Marshmallow)  
 - Recommended: **API level 30** (R)
-<br/><br/><br/><br/>
+<br/><br/><br/>
 ## 📑 Commit Convention
-📌 [관련된 좋은 글](https://chris.beams.io/posts/git-commit)
+📌[관련된 좋은 글](https://chris.beams.io/posts/git-commit)
 <br/>
 |명령어|내용|
 | :-----------------------------------: | :---------------------------------------: |
@@ -23,6 +23,16 @@
 | VERIFY | 검증 코드를 넣을 때 주로 사용   |
 | SET | 변수 값을 변경하는 등의 작은 수정   |
 
-<br/><br/><br/><br/>
+<br/><br/><br/>
 ### 🔀 Git Flow
-branch - ```master``` ```soyeon``` ```suyeon``` ```jaekyeong```
+📌[참고 글](https://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html)
+<br/>
+branch - ```master```  
+working on - ```soyeon``` ```suyeon``` ```jaekyeong```
+|branch|목적|
+| :------: | :-------: |
+|  **master | 제품으로 출시될 수 있는 브랜치**  |
+|  develop  | 다음 출시 버전을 개발하는 브랜치  |
+|  feature/{feature_name}  | 기능을 개발하는 브랜치  |
+|  release-{version}  | 이번 출시 버전을 준비하는 브랜치  |
+|  hotfix  | 출시 버전에서 발생한 버그를 수정 하는 브랜치  |
