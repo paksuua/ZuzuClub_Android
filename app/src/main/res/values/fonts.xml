@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Title24">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+    </style>
+    <style name="SubTitle18">
+        <item name="android:fontFamily">@font/noto_sans_black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+    <style name="SubTitle18Bold">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+    <style name="SubTite14Bold">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:lineSpacingExtra">10sp</item>
+    </style>
+    <style name="Contents14Regular">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:lineSpacingExtra">10sp</item>
+    </style>
+</resources>
