@@ -36,3 +36,9 @@ working on - ```soyeon``` ```suyeon``` ```jaekyeong```
 |  feature/{feature_name}  | 기능을 개발하는 브랜치  |
 |  release_{version}  | 이번 출시 버전을 준비하는 브랜치  |
 |  hotfix  | 출시 버전에서 발생한 버그를 수정 하는 브랜치  |
+
+<br/><br/><br/>
+## 🔨 Naming Convention
+
+### 🎨 Resource Convention
+<img width="70%" alt="android resource convention" src="https://user-images.githubusercontent.com/35393459/113091935-f400b900-9227-11eb-9a1e-188ad085387c.png"></img>
