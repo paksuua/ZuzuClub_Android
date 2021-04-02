@@ -37,6 +37,12 @@ working on - ```soyeon``` ```suyeon``` ```jaekyeong```
 |  release_{version}  | 이번 출시 버전을 준비하는 브랜치  |
 |  hotfix  | 출시 버전에서 발생한 버그를 수정 하는 브랜치  |
 
+## Example
+[J]feature/login
+[P]feature/edit
+[L]feature/feed
+
+
 <br/><br/><br/>
 ## 🔨 Naming Convention
 
