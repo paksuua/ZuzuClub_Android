@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="icFeed"
+            type="com.stock.sns.zuzuclub_android.data.model.Feed" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/i_feed_iv_profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_android_gray_24dp"
+            android:src="@{icFeed.profileImage}"
+            android:layout_marginTop="@dimen/single_margin"
+            android:layout_marginStart="@dimen/single_margin"
+            />
+
+        <TextView
+            android:id="@+id/i_feed_tv_nickname"
+            style="@style/SubTite14Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/half_margin"
+            android:layout_marginTop="@dimen/single_margin"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/i_feed_iv_profile"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="123" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/half_margin"
+            app:layout_constraintStart_toEndOf="@id/i_feed_iv_profile"
+            app:layout_constraintTop_toBottomOf="@+id/i_feed_tv_nickname"
+            tools:text="123"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
