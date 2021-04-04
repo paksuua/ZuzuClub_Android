@@ -24,7 +24,7 @@ class FeedFragment : Fragment() {
         viewModel.text.observe(
             viewLifecycleOwner,
             {
-                binding.tvFeed.text = it
+                //binding.tvFeed.text = it
             }
         )
         return binding.root
