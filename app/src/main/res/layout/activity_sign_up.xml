@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.signup.SignUpActivity">
+
+    <ImageButton
+        android:id="@+id/a_signup_btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:src="@drawable/ic_cancel_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/a_signup_tv_join"
+        style="@style/Title24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:includeFontPadding="false"
+        android:text="주주클럽 가입하기."
+        android:textColor="@color/zuzu_black_100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/a_signup_tv_nickname"
+        style="@style/SubTitle18Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="닉네임"
+        android:textColor="@color/zuzu_black_100"
+        app:layout_constraintStart_toStartOf="@id/a_signup_et_nickname"
+        app:layout_constraintTop_toBottomOf="@+id/a_signup_tv_join" />
+
+    <EditText
+        android:id="@+id/a_signup_et_nickname"
+        style="@style/Contents12Regular"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|top"
+        android:hint="닉네임을 입력해주세요."
+        android:inputType="text"
+        android:textColorHint="@color/zuzu_black_50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/a_signup_tv_nickname" />
+
+    <TextView
+        android:id="@+id/a_signup_tv_nickname_check"
+        style="@style/Contents12Regular"
+        android:layout_width="64dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/signup_btn_background"
+        android:gravity="center"
+        android:text="중복확인"
+        android:textColor="@color/zuzu_white"
+        app:layout_constraintEnd_toEndOf="@+id/a_signup_et_nickname"
+        app:layout_constraintTop_toBottomOf="@id/a_signup_tv_nickname" />
+
+    <TextView
+        android:id="@+id/a_signup_tv_nickname_count"
+        style="@style/Contents10Regular"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="0/20"
+        android:textAlignment="textEnd"
+        android:textColor="@color/zuzu_black_50"
+        app:layout_constraintEnd_toEndOf="@+id/a_signup_tv_nickname_check"
+        app:layout_constraintTop_toBottomOf="@+id/a_signup_tv_nickname_check" />
+
+    <TextView
+        android:id="@+id/a_signup_tv_introduce"
+        style="@style/SubTitle18Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="소개글"
+        android:textColor="@color/zuzu_black_100"
+        app:layout_constraintStart_toStartOf="@id/a_signup_et_introduce"
+        app:layout_constraintTop_toBottomOf="@+id/a_signup_et_nickname" />
+
+    <EditText
+        android:id="@+id/a_signup_et_introduce"
+        style="@style/Contents12Regular"
+        android:layout_width="248dp"
+        android:layout_height="wrap_content"
+        android:gravity="start|top"
+        android:hint="소개글을 입력해주세요."
+        android:inputType="text"
+        android:textColorHint="@color/zuzu_black_50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/a_signup_tv_introduce" />
+
+    <TextView
+        android:id="@+id/a_signup_tv_introduce_count"
+        style="@style/Contents10Regular"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:text="0/20"
+        android:textAlignment="textEnd"
+        android:textColor="@color/zuzu_black_50"
+        app:layout_constraintEnd_toEndOf="@+id/a_signup_tv_nickname_count"
+        app:layout_constraintTop_toBottomOf="@+id/guideline5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="302dp" />
+
+    <TextView
+        android:id="@+id/a_signup_tv_next"
+        style="@style/SubTitle18"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/zuzu_coolgrey_10"
+        android:gravity="center"
+        android:text="다음"
+        android:textColor="@color/zuzu_black_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
