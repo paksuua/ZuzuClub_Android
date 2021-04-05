@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--  Basic Style  -->
+
+    <style name="Title32Black">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
     <style name="Title24">
         <item name="android:fontFamily">@font/noto_sans</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">24sp</item>
         <item name="android:letterSpacing">0.02</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="LineSpacingTitle24">
+    <style name="SubTitle20Bold">
         <item name="android:fontFamily">@font/noto_sans</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:letterSpacing">0.02</item>
-        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="SubTitle18">
@@ -21,14 +30,7 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">18sp</item>
         <item name="android:letterSpacing">0.02</item>
-    </style>
-
-    <style name="LineSpacingSubTitle18">
-        <item name="android:fontFamily">@font/noto_sans_black</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:letterSpacing">0.02</item>
-        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="SubTitle18Bold">
@@ -36,14 +38,14 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18sp</item>
         <item name="android:letterSpacing">0.02</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="LineSpacingSubTitle18Bold">
+    <style name="Contents16Bold">
         <item name="android:fontFamily">@font/noto_sans</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:letterSpacing">0.02</item>
-        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="SubTitle14Bold">
@@ -51,14 +53,7 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">14sp</item>
         <item name="android:letterSpacing">0.03</item>
-    </style>
-
-    <style name="LineSpacingSubTitle14Bold">
-        <item name="android:fontFamily">@font/noto_sans</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:letterSpacing">0.03</item>
-        <item name="android:lineSpacingExtra">10sp</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="Contents14Regular">
@@ -66,6 +61,84 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
         <item name="android:letterSpacing">0.03</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Contents12Regular">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Contents11Regular">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Contents10Regular">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+
+    <!--  Line Spacing Style : Contents16Bold를 제외한 나머지 폰트 스타일 -->
+
+    <style name="LineSpacingTitle32Black">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+    </style>
+
+    <style name="LineSpacingTitle24">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+    </style>
+
+    <style name="LineSpacingSubTitle20Bold">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+    </style>
+
+    <style name="LineSpacingSubTitle18">
+        <item name="android:fontFamily">@font/noto_sans_black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+
+    <style name="LineSpacingSubTitle18Bold">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+
+    <style name="LineSpacingSubTitle14Bold">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">10sp</item>
     </style>
 
     <style name="LineSpacingContents14Regular">
@@ -73,6 +146,31 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
         <item name="android:letterSpacing">0.03</item>
+        <item name="android:includeFontPadding">false</item>
         <item name="android:lineSpacingExtra">10sp</item>
+    </style>
+
+    <style name="LineSpacingContents12Regular">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+    </style>
+
+    <style name="LineSpacingContents11Regular">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+    </style>
+
+    <style name="LineSpacingContents10Regular">
+        <item name="android:fontFamily">@font/noto_sans</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">14sp</item>
     </style>
 </resources>
