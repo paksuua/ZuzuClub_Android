@@ -33,7 +33,7 @@
             android:layout_marginStart="@dimen/half_margin"
             android:layout_marginTop="@dimen/single_margin"
             android:includeFontPadding="false"
-            android:text="@{icFeed.nickname"
+            android:text="@{icFeed.nickname}"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@id/i_feed_iv_profile"
             app:layout_constraintTop_toTopOf="parent"
