@@ -6,4 +6,89 @@
     android:layout_height="match_parent"
     tools:context=".ui.signup.TermsActivity">
 
+    <ImageButton
+        android:id="@+id/a_terms_iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:src="@drawable/ic_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/a_terms_tv_join"
+        style="@style/Title24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="주주클럽 가입하기."
+        android:textColor="@color/zuzu_black_100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/a_terms_cb_full_consent"
+        style="@style/SubTitle14Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="142dp"
+        android:button="@drawable/terms_selector_checkbox"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:text="약관 전체동의"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/a_terms_tv_join" />
+
+    <View
+        android:id="@+id/a_terms_v_line"
+        android:layout_width="248dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/zuzu_black_100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/a_terms_cb_full_consent" />
+
+    <CheckBox
+        android:id="@+id/a_terms_cb_terms_consent"
+        style="@style/SubTitle14Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:button="@drawable/terms_selector_checkbox"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:text="이용약관 동의(필수)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/a_terms_cb_full_consent" />
+
+    <CheckBox
+        android:id="@+id/a_terms_cb_personal_info_consent"
+        style="@style/SubTitle14Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:button="@drawable/terms_selector_checkbox"
+        android:paddingStart="18dp"
+        android:text="개인정보 수집 및 이용동의(필수)"
+        android:paddingEnd="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/a_terms_cb_terms_consent" />
+
+    <TextView
+        android:id="@+id/a_terms_tv_next"
+        style="@style/SubTitle18"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/zuzu_coolgrey_10"
+        android:gravity="center"
+        android:text="다음"
+        android:textColor="@color/zuzu_black_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
