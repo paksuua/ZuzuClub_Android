@@ -20,7 +20,7 @@
             android:layout_height="40dp"
             android:layout_marginStart="@dimen/single_margin"
             android:layout_marginTop="@dimen/single_margin"
-            android:src="@{icFeed.profileImage}"
+            app:profileImage="@{icFeed.profileImage}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="#c4c4c4" />
