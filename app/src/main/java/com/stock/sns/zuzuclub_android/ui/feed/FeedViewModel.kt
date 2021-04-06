@@ -1,8 +1,11 @@
 package com.stock.sns.zuzuclub_android.ui.feed
 
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
 import com.stock.sns.zuzuclub_android.data.model.Feed
@@ -42,5 +45,10 @@ class FeedViewModel : ViewModel() {
         override fun onTabReselected(tab: TabLayout.Tab?) {
         }
 
+    }
+
+    @BindingAdapter("profileImage")
+    fun getImg(view: ImageView, url: String) {
+        Glide.with(view.context).load(url).centerCrop().into(view)
     }
 }
