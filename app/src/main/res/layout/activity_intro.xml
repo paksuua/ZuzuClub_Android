@@ -51,7 +51,6 @@
         android:layout_marginBottom="72dp"
         android:background="@null"
         android:gravity="center"
-        android:includeFontPadding="false"
         android:text="시작하기"
         android:textColor="@color/zuzu_orange"
         app:layout_constraintBottom_toBottomOf="parent"
