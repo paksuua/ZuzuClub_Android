@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ZuzuClub_Android">
-        <activity android:name=".ui.signup.SignUpActivity"></activity>
+        <activity android:name=".ui.signup.TermsActivity"></activity>
+        <activity android:name=".ui.signup.SignUpActivity" />
         <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.intro.IntroActivity" />
         <activity android:name=".ui.MainActivity">
