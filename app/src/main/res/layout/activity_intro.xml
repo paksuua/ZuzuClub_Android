@@ -7,7 +7,7 @@
     tools:context=".ui.intro.IntroActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/a_intro_iv_title_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -19,22 +19,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/intro_viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/a_intro_vp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/intro_tab"
+        android:id="@+id/a_intro_tl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageView3"
+        app:layout_constraintTop_toTopOf="@id/a_intro_iv_wild_grass"
         app:tabBackground="@drawable/intro_selector_tab_indicator"
         app:tabGravity="center"
         app:tabIndicator="@null"
@@ -43,7 +43,7 @@
         app:tabPaddingStart="8dp" />
 
     <TextView
-        android:id="@+id/intro_tv_start"
+        android:id="@+id/a_intro_tv_start"
         style="@style/Title24"
         android:layout_width="264dp"
         android:layout_height="48dp"
@@ -51,16 +51,15 @@
         android:layout_marginBottom="72dp"
         android:background="@null"
         android:gravity="center"
-        android:includeFontPadding="false"
         android:text="시작하기"
         android:textColor="@color/zuzu_orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageView3" />
+        app:layout_constraintTop_toTopOf="@id/a_intro_iv_wild_grass" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/a_intro_iv_wild_grass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"

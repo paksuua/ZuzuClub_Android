@@ -38,9 +38,7 @@ working on - ```soyeon``` ```suyeon``` ```jaekyeong```
 |  hotfix  | 출시 버전에서 발생한 버그를 수정 하는 브랜치  |
 
 ## Example
-[J]feature/login<br/>
-[P]feature/edit<br/>
-[L]feature/feed<br/>
+### jo/feature/signup<br/>
 
 <br/><br/><br/>
 ## 🔨 Naming Convention
