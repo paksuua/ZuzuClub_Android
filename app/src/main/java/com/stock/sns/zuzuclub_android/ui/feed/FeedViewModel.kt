@@ -46,9 +46,9 @@ class FeedViewModel : ViewModel() {
         }
 
     }
+}
 
-    @BindingAdapter("profileImage")
-    fun getImg(view: ImageView, url: String) {
-        Glide.with(view.context).load(url).centerCrop().into(view)
-    }
+@BindingAdapter("profileImage")
+fun getImg(view: ImageView, url: String) {
+    Glide.with(view.context).load(url).centerCrop().into(view)
 }
