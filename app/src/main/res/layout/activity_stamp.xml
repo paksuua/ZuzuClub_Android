@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/a_stamp_iv_welcome_stamp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="168dp"
@@ -28,7 +28,7 @@
         app:srcCompat="@drawable/stamp_img_welcome_stamp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/a_stamp_tv_welcome_zuzu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
@@ -38,7 +38,7 @@
         style="@style/SubTitle18Bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/a_stamp_iv_welcome_stamp" />
 
 
     <TextView
