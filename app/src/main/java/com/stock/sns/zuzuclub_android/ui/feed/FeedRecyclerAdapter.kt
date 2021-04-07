@@ -1,6 +1,8 @@
 package com.stock.sns.zuzuclub_android.ui.feed
 
 import android.content.Context
+import android.graphics.drawable.ShapeDrawable
+import android.graphics.drawable.shapes.OvalShape
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -34,6 +36,11 @@ class FeedRecyclerAdapter(var itemlist: LiveData<ArrayList<Feed>>): RecyclerView
         constructor(binding: ItemFeedBinding) : this(binding.root) {
             Log.d("ViewHolder", " create")
             this.binding = binding
+            binding.iFeedIvProfile.apply {
+                background = ShapeDrawable(OvalShape())
+                clipToOutline = true
+            }
+
         }
 
         fun bind(feed: Feed) {
