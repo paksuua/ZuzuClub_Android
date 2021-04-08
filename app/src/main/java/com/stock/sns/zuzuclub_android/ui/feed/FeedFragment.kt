@@ -1,24 +1,33 @@
 package com.stock.sns.zuzuclub_android.ui.feed
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.stock.sns.zuzuclub_android.R
 import com.stock.sns.zuzuclub_android.data.model.Feed
 import com.stock.sns.zuzuclub_android.databinding.FragmentFeedBinding
+import com.stock.sns.zuzuclub_android.util.CustomScroll
+import com.volokh.danylo.hashtaghelper.HashTagHelper
 
-class FeedFragment : Fragment() {
+
+class FeedFragment : Fragment(), CustomScroll.onLoadMore {
     private val binding by lazy { FragmentFeedBinding.inflate(layoutInflater) }
     private val viewModel by viewModels<FeedViewModel>()
     var data = MutableLiveData<ArrayList<Feed>>()
+    lateinit var myscroll: CustomScroll
+    lateinit var mTextHashTagHelper: HashTagHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
@@ -27,7 +36,15 @@ class FeedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         //binding.fFeedTablayout.addOnTabSelectedListener(viewModel.onTabSelectedListener)
-        binding.fFeedRcvList.layoutManager = LinearLayoutManager(context)
+
+        myscroll = CustomScroll(this) //스크롤 설정
+        myscroll.setLoaded()
+
+        binding.fFeedRcvList.apply {
+            layoutManager = LinearLayoutManager(context)
+            addOnScrollListener(myscroll)
+        }
+
 
         //viewmodel의 값 바뀌면 livedata 로직 실행
         val dataObserver: Observer<ArrayList<Feed>> =
@@ -46,5 +63,9 @@ class FeedFragment : Fragment() {
 //            }
 //        )
         return binding.root
+    }
+
+    override fun onLoadMore() {
+        binding.fFeedRcvList.smoothScrollToPosition(data.value!!.size - 1)
     }
 }

@@ -15,7 +15,7 @@ fun getDefaultFeedList() = arrayListOf(
         profileImage = "http://placehold.it/120x120&text=image1",
         nickname = "방배동 살쾡이",
         updated = "2시간 전",
-        emojiType = 3,
+        emojiType = 1,
         text = "\$카카오 이제 들어간다~! ",
         reaction = 4,
         comment = 12
@@ -24,7 +24,7 @@ fun getDefaultFeedList() = arrayListOf(
         profileImage = "http://placehold.it/120x120&text=image2",
         nickname = "방배동 살쾡이",
         updated = "2시간 전",
-        emojiType = 3,
+        emojiType = 2,
         text = "\$카카오 이제 들어간다~! ",
         reaction = 4,
         comment = 12
@@ -34,7 +34,7 @@ fun getDefaultFeedList() = arrayListOf(
         nickname = "방배동 살쾡이",
         updated = "2시간 전",
         emojiType = 3,
-        text = "\$카카오 이제 들어간다~! ",
+        text = "이제 \$카카오 들어간다~! ",
         reaction = 4,
         comment = 12
     ),
@@ -42,7 +42,7 @@ fun getDefaultFeedList() = arrayListOf(
         profileImage = "http://placehold.it/120x120&text=image4",
         nickname = "방배동 살쾡이",
         updated = "2시간 전",
-        emojiType = 3,
+        emojiType = 4,
         text = "\$카카오 이제 들어간다~! ",
         reaction = 4,
         comment = 12
@@ -51,7 +51,7 @@ fun getDefaultFeedList() = arrayListOf(
         profileImage = "http://placehold.it/120x120&text=image5",
         nickname = "방배동 살쾡이",
         updated = "2시간 전",
-        emojiType = 3,
+        emojiType = 1,
         text = "\$카카오 이제 들어간다~! ",
         reaction = 4,
         comment = 12
@@ -60,7 +60,7 @@ fun getDefaultFeedList() = arrayListOf(
         profileImage = "http://placehold.it/120x120&text=image6",
         nickname = "방배동 살쾡이",
         updated = "2시간 전",
-        emojiType = 3,
+        emojiType = 2,
         text = "\$카카오 이제 들어간다~! ",
         reaction = 4,
         comment = 12
@@ -78,7 +78,7 @@ fun getDefaultFeedList() = arrayListOf(
         profileImage = "http://placehold.it/120x120&text=image8",
         nickname = "방배동 살쾡이",
         updated = "2시간 전",
-        emojiType = 3,
+        emojiType = 4,
         text = "\$카카오 이제 들어간다~! ",
         reaction = 4,
         comment = 12

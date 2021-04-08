@@ -20,9 +20,9 @@
             android:layout_height="40dp"
             android:layout_marginStart="@dimen/single_margin"
             android:layout_marginTop="@dimen/single_margin"
-            app:profileImage="@{icFeed.profileImage}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:profileImage="@{icFeed.profileImage}"
             tools:src="#c4c4c4" />
 
         <TextView
@@ -48,8 +48,8 @@
             android:includeFontPadding="false"
             android:text="@{icFeed.updated}"
             android:textSize="11sp"
-            app:layout_constraintTop_toBottomOf="@id/i_feed_tv_nickname"
             app:layout_constraintStart_toEndOf="@id/i_feed_iv_profile"
+            app:layout_constraintTop_toBottomOf="@id/i_feed_tv_nickname"
             tools:text="123" />
 
         <ImageView
@@ -68,11 +68,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/single_margin"
             android:layout_marginTop="@dimen/half_margin"
+            app:emojiType="@{icFeed.emojiType}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/i_feed_iv_profile"
             tools:src="@drawable/flex_fox_72" />
 
-        <TextView
+        <io.github.armcha.autolink.AutoLinkTextView
             android:id="@+id/i_feed_tv_text"
             style="@style/Contents14Regular"
             android:layout_width="match_parent"
@@ -82,6 +83,7 @@
             android:layout_marginEnd="@dimen/single_margin"
             android:includeFontPadding="false"
             android:text="@{icFeed.text}"
+            android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@id/i_feed_iv_emoji"
             tools:text="ㅇㅡ으ㅏㅇ아아아아아아아... ㄴ아아아아" />
 
@@ -91,11 +93,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/single_margin"
             android:layout_marginTop="@dimen/single_margin"
+            android:layout_marginBottom="@dimen/single_margin"
             android:src="@drawable/icon_reation_on_16"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/i_feed_tv_text"
-            android:layout_marginBottom="@dimen/single_margin"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/i_feed_tv_text" />
 
         <TextView
             android:id="@+id/i_feed_tv_reaction"
@@ -109,6 +111,7 @@
             app:layout_constraintStart_toEndOf="@id/i_feed_iv_reaction_icon"
             app:layout_constraintTop_toTopOf="@id/i_feed_iv_reaction_icon"
             tools:text="123" />
+
         <ImageView
             android:id="@+id/i_feed_iv_comment_icon"
             android:layout_width="wrap_content"
@@ -117,6 +120,7 @@
             android:src="@drawable/icon_comment_on_16"
             app:layout_constraintStart_toEndOf="@id/i_feed_tv_reaction"
             app:layout_constraintTop_toTopOf="@id/i_feed_tv_reaction" />
+
         <TextView
             android:id="@+id/i_feed_tv_comment"
             android:layout_width="wrap_content"
@@ -129,22 +133,24 @@
             app:layout_constraintStart_toEndOf="@id/i_feed_iv_comment_icon"
             app:layout_constraintTop_toTopOf="@id/i_feed_iv_comment_icon"
             tools:text="123" />
+
         <ImageView
             android:id="@+id/i_feed_iv_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/single_margin"
             android:src="@drawable/icon_comment_off"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/i_feed_iv_reaction_icon"
-            android:layout_marginEnd="@dimen/single_margin" />
+            app:layout_constraintEnd_toEndOf="parent" />
+
         <ImageView
+            android:id="@+id/i_feed_iv_reaction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/i_feed_iv_reaction"
-            app:layout_constraintEnd_toStartOf="@id/i_feed_iv_comment"
-            android:src="@drawable/icon_reaction_off"
             android:layout_marginEnd="@dimen/half_margin"
-            app:layout_constraintTop_toTopOf="@id/i_feed_iv_comment"/>
+            android:src="@drawable/icon_reaction_off"
+            app:layout_constraintEnd_toStartOf="@id/i_feed_iv_comment"
+            app:layout_constraintTop_toTopOf="@id/i_feed_iv_comment" />
 
         <View
             android:layout_width="match_parent"
