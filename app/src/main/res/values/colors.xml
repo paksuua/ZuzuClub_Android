@@ -21,4 +21,5 @@
     <color name="zuzu_black_20">#33000000</color>
     <color name="zuzu_yellow">#ffce00</color>
     <color name="zuzu_white">#ffffff</color>
+    <color name="zuzu_stockBlue">#2d9cdb</color>
 </resources>
