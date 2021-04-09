@@ -1,6 +1,9 @@
 package com.stock.sns.zuzuclub_android.ui
 
+import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -15,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        // system bar transparent
+        // iniTransparentSystemBar()
+
         initNavigationBar()
     }
 
@@ -25,5 +31,18 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         navView.setupWithNavController(navController)
         binding.btnvView.itemIconTintList = null
+    }
+
+    private fun iniTransparentSystemBar() {
+        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+        binding.root.setPadding(0, 0, 0, statusBarHeight(this))
+        window.statusBarColor = Color.TRANSPARENT
+    }
+
+    private fun statusBarHeight(context: Context): Int {
+        val resourceId = context.resources.getIdentifier("status_bar_height", "dimen", "android")
+
+        return if (resourceId > 0) context.resources.getDimensionPixelSize(resourceId)
+        else 0
     }
 }
