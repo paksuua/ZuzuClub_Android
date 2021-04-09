@@ -1,9 +1,7 @@
 package com.stock.sns.zuzuclub_android.ui.feed
 
-import android.graphics.Color
 import android.view.View
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,7 +10,6 @@ import com.google.android.material.tabs.TabLayout
 import com.stock.sns.zuzuclub_android.R
 import com.stock.sns.zuzuclub_android.data.model.Feed
 import com.stock.sns.zuzuclub_android.data.model.getDefaultFeedList
-import com.volokh.danylo.hashtaghelper.HashTagHelper
 
 
 class FeedViewModel : ViewModel() {
@@ -23,11 +20,12 @@ class FeedViewModel : ViewModel() {
 //    val text: LiveData<String> = _text
 
     val feedData: MutableLiveData<ArrayList<Feed>> = MutableLiveData()
+    var tempList:ArrayList<Feed> = getDefaultFeedList()
 
 
     init {
-        var demoData = getDefaultFeedList()
-        feedData.postValue(demoData)
+        cutoffText() //글자수 잘라서 더보기 붙
+        feedData.postValue(tempList)
     }
 
 
@@ -51,7 +49,18 @@ class FeedViewModel : ViewModel() {
         }
 
     }
+
+    fun cutoffText(){ //야매로 글자 잘라버리기
+        for(i in tempList){
+            if(i.text.length > 150){
+                i.text=i.text.substring(0,150)
+                i.text=i.text+" ...더 보기"
+            }
+        }
+
+    }
 }
+
 
 @BindingAdapter("profileImage")
 fun getProfileImage(view: ImageView, url: String) {

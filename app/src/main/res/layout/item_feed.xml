@@ -73,7 +73,7 @@
             app:layout_constraintTop_toBottomOf="@id/i_feed_iv_profile"
             tools:src="@drawable/flex_fox_72" />
 
-        <io.github.armcha.autolink.AutoLinkTextView
+        <com.stock.sns.zuzuclub_android.util.autolink.AutoLinkTextView
             android:id="@+id/i_feed_tv_text"
             style="@style/Contents14Regular"
             android:layout_width="match_parent"
@@ -81,7 +81,6 @@
             android:layout_marginStart="@dimen/single_margin"
             android:layout_marginTop="@dimen/half_margin"
             android:layout_marginEnd="@dimen/single_margin"
-            android:includeFontPadding="false"
             android:text="@{icFeed.text}"
             android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@id/i_feed_iv_emoji"
@@ -128,7 +127,7 @@
             android:layout_marginStart="@dimen/half_margin"
             android:fontFamily="@font/noto_sans"
             android:includeFontPadding="false"
-            android:text="@{@string/action_number(icFeed.comment)}"
+            android:text="@{@string/comment_number(icFeed.comment)}"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@id/i_feed_iv_comment_icon"
             app:layout_constraintTop_toTopOf="@id/i_feed_iv_comment_icon"

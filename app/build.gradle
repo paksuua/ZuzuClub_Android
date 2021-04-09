@@ -112,9 +112,7 @@ dependencies {
     //fragment
     implementation "androidx.fragment:fragment-ktx:1.3.1"
 
-    //hashtag-helper
-    implementation "com.github.danylovolokh:hashtag-helper:1.1.0"
-
     //autolinktv
-    implementation 'com.github.armcha:AutoLinkTextViewV2:3.0.0'
+    //implementation 'com.github.armcha:AutoLinkTextViewV2:3.0.0'
+
 }
