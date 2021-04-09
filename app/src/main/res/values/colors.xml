@@ -10,15 +10,22 @@
 
     <color name="zuzu_blue">#5d83ff</color>
     <color name="zuzu_orange">#ff542b</color>
+    <color name="zuzu_orange_30">#4cff542b</color>
     <color name="zuzu_pink">#ff31d8</color>
     <color name="zuzu_popgreen">#00ff76</color>
-    <color name="zuzu_coolgrey_20">#c9c3dd</color>
     <color name="zuzu_coolgrey_80">#4b4465</color>
-    <color name="zuzu_coolgrey_10">#ece7fc</color>
-    <color name="zuzu_darkgeen">#00c43c</color>
+    <color name="zuzu_coolgrey_50">#898499</color>
+    <color name="zuzu_coolgrey_20">#c9c3dd</color>
+    <color name="zuzu_coolgrey_10">#f1eefb</color>
+    <color name="zuzu_coolgrey_5">#f9f6ff</color>
+    <color name="zuzu_darkgreen">#00c43c</color>
     <color name="zuzu_black_100">#000000</color>
+    <color name="zuzu_black_70">#b3000000</color>
     <color name="zuzu_black_50">#80000000</color>
+    <color name="zuzu_black_30">#4c000000</color>
     <color name="zuzu_black_20">#33000000</color>
+    <color name="zuzu_black_10">#19000000</color>
     <color name="zuzu_yellow">#ffce00</color>
     <color name="zuzu_white">#ffffff</color>
+    <color name="zuzu_stockBlue">#2d9cdb</color>
 </resources>
