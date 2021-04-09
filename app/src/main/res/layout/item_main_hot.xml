@@ -10,6 +10,8 @@
             type="com.stock.sns.zuzuclub_android.data.model.HotData" />
     </data>
 
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -27,8 +29,8 @@
 
         <ImageView
             android:id="@+id/img_ic_hot"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="136dp"
+            android:layout_height="96dp"
             android:adjustViewBounds="true"
             android:src="@drawable/flex_fox_96"
             android:layout_marginHorizontal="24dp"
@@ -45,13 +47,15 @@
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="@color/zuzu_black_100"
-            android:lineSpacingExtra="6sp"
             android:gravity="center_horizontal"
-            tools:text="카카오"
+            android:text="@{icHomeHot.name}"
+            android:includeFontPadding="false"
+            tools:text="깨깨오"
             android:layout_marginHorizontal="24dp"
+            app:layout_constraintTop_toBottomOf="@id/img_ic_hot"
+            app:layout_constraintBottom_toBottomOf="@id/img_bg"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/img_bg" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/tv_desc_hot"
@@ -60,7 +64,8 @@
             android:layout_marginBottom="8dp"
             style="@style/Contents11Regular"
             android:gravity="center_horizontal"
-            tools:text="FLEX 축제를 벌이고 있는 종목!"
+            android:text="@{icHomeHot.desc}"
+            tools:text="어쩌구저쩌구종목!"
             android:layout_marginHorizontal="24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
