@@ -1,21 +1,17 @@
 package com.stock.sns.zuzuclub_android.ui.feed
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.stock.sns.zuzuclub_android.R
 import com.stock.sns.zuzuclub_android.data.model.Feed
 import com.stock.sns.zuzuclub_android.databinding.FragmentFeedBinding
 import com.stock.sns.zuzuclub_android.util.CustomScroll
-import com.volokh.danylo.hashtaghelper.HashTagHelper
 
 
 class FeedFragment : Fragment(), CustomScroll.onLoadMore {
@@ -23,7 +19,6 @@ class FeedFragment : Fragment(), CustomScroll.onLoadMore {
     private val viewModel by viewModels<FeedViewModel>()
     var data = MutableLiveData<ArrayList<Feed>>()
     lateinit var myscroll: CustomScroll
-    lateinit var mTextHashTagHelper: HashTagHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
