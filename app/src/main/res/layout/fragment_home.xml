@@ -1,16 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/tv_home"
+    <data>
+
+        <variable
+            name="homeVM"
+            type="com.stock.sns.zuzuclub_android.ui.home.HomeViewModel" />
+
+        <variable
+            name="fragment"
+            type="com.stock.sns.zuzuclub_android.ui.home.HomeFragment" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="40sp"
-        android:text="home_fragment" />
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="parent">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_weather"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/weather_sun"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/rectangle_210"
+                app:layout_constraintBottom_toBottomOf="@id/img_weather"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:src="@drawable/zuzuclub_title_logo_white_green_24"
+                app:layout_constraintBottom_toTopOf="@id/tv_home_weather"
+                app:layout_constraintStart_toStartOf="@id/tv_home_weather" />
+
+            <ImageView
+                android:id="@+id/img_home_search"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16sp"
+                android:layout_marginBottom="24dp"
+                android:src="@drawable/icon_search"
+                app:layout_constraintBottom_toTopOf="@id/tv_home_weather"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_home_weather"
+                style="@style/Title32Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/single_margin"
+                android:layout_marginTop="56dp"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="오늘의 날씨는\n맑아요 ^0^" />
+
+            <TextView
+                android:id="@+id/tv_home_desc"
+                style="@style/Contents12Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/single_margin"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_weather"
+                tools:text="무려 41%의 주주들이 기뻐하고 있네요!\n따상 따따상 가즈아~!" />
+
+            <ProgressBar
+                android:id="@+id/pg_home"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="224dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:min="0"
+                android:progressDrawable="@drawable/progress"
+                app:layout_constraintStart_toStartOf="@id/tv_home_desc"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_desc"
+                app:trackColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_home_hot"
+                style="@style/SubTitle20Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="136dp"
+                android:includeFontPadding="false"
+                android:text="현재 HOT한 종목들"
+                android:textColor="@color/zuzu_black_100"
+                app:layout_constraintStart_toStartOf="@id/tv_home_weather"
+                app:layout_constraintTop_toBottomOf="@id/pg_home" />
+
+            <TextView
+                android:id="@+id/tv_home_rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_cjkkr_regular"
+                android:lineSpacingExtra="10sp"
+                android:text="랭킹 보기"
+                android:textColor="@color/zuzu_black_50"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tv_home_hot"
+                app:layout_constraintEnd_toEndOf="@id/img_home_search"
+                app:layout_constraintTop_toTopOf="@id/tv_home_hot" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_home_hot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_hot"
+                tools:listitem="@layout/item_main_hot" />
+
+            <TextView
+                android:id="@+id/tv_home_interest"
+                style="@style/SubTitle20Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="나의 관심 종목"
+                android:includeFontPadding="false"
+                android:textColor="@color/zuzu_black_100"
+                app:layout_constraintStart_toStartOf="@id/tv_home_weather"
+                app:layout_constraintTop_toBottomOf="@id/rv_home_hot" />
+
+            <TextView
+                android:id="@+id/tv_home_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_cjkkr_regular"
+                android:lineSpacingExtra="10sp"
+                android:text="더보기"
+                android:textColor="@color/zuzu_black_50"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tv_home_interest"
+                app:layout_constraintEnd_toEndOf="@id/img_home_search"
+                app:layout_constraintTop_toTopOf="@id/tv_home_interest" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_home_interest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:includeFontPadding="false"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_interest"
+                app:spanCount="2"
+                tools:itemCount="6"
+                tools:listitem="@layout/item_main_interest"
+                tools:orientation="vertical"
+                tools:scrollbars="vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="102dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="0sp"
+                android:text="오늘의 날씨는 어제 오전 9시부터\n오늘 오전 9시까지 집계된 결과입니다 :)"
+                android:textColor="@color/zuzu_black_20"
+                android:textSize="12sp"
+
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_home_interest" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="62dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/mask_group"
+                app:layout_constraintTop_toBottomOf="@+id/rv_home_interest" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
