@@ -73,12 +73,12 @@
         style="@style/Contents10Regular"
         android:layout_width="64dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="32dp"
         android:text="0/20"
         android:textAlignment="textEnd"
         android:textColor="@color/zuzu_black_50"
         app:layout_constraintEnd_toEndOf="@+id/a_signup_tv_nickname_check"
-        app:layout_constraintTop_toBottomOf="@+id/a_signup_tv_nickname_check" />
+        app:layout_constraintTop_toBottomOf="@+id/a_signup_tv_nickname" />
 
     <TextView
         android:id="@+id/a_signup_tv_introduce"
@@ -110,17 +110,12 @@
         android:layout_width="64dp"
         android:layout_height="wrap_content"
         android:text="0/20"
+        android:layout_marginTop="32dp"
         android:textAlignment="textEnd"
         android:textColor="@color/zuzu_black_50"
         app:layout_constraintEnd_toEndOf="@+id/a_signup_tv_nickname_count"
-        app:layout_constraintTop_toBottomOf="@+id/guideline5" />
+        app:layout_constraintTop_toBottomOf="@+id/a_signup_tv_introduce" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="302dp" />
 
     <TextView
         android:id="@+id/a_signup_tv_next"
