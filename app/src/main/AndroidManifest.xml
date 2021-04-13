@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ZuzuClub_Android">
-        <activity android:name=".ui.signup.StampActivity"></activity>
+        <activity android:name=".ui.signup.StampActivity"/>
         <activity android:name=".ui.signup.ChooseStockActivity" />
         <activity android:name=".ui.signup.TermsActivity" />
-        <activity android:name=".ui.signup.SignUpActivity" />
+        <activity android:name=".ui.signup.SignUpActivity" android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.intro.IntroActivity" />
         <activity android:name=".ui.MainActivity">
