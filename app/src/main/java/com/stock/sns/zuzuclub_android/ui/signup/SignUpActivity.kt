@@ -1,18 +1,28 @@
 package com.stock.sns.zuzuclub_android.ui.signup
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Window
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.stock.sns.zuzuclub_android.R
 import com.stock.sns.zuzuclub_android.databinding.ActivitySignUpBinding
+import java.util.*
 
 class SignUpActivity : AppCompatActivity() {
     private val binding by lazy { ActivitySignUpBinding.inflate(layoutInflater)}
     private val viewModel by viewModels<SignUpViewModel>()
+    private lateinit var dialog: Dialog
+    private lateinit var textNicknameCheck : TextView
+    private lateinit var btnOK : TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.apply {
@@ -21,6 +31,7 @@ class SignUpActivity : AppCompatActivity() {
         }
         setContentView(binding.root)
         initViewModel()
+        initNicknameDialog()
         initClickListener()
     }
 
@@ -39,7 +50,31 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun initClickListener(){
         binding.aSignupBtnCancel.setOnClickListener { finish() }
-        binding.aSignupTvNicknameCheck.setOnClickListener { viewModel.isAvailableNickname() }
+        binding.aSignupTvNicknameCheck.setOnClickListener {
+            viewModel.isAvailableNickname()
+            loadNicknameDialog()
+        }
         binding.aSignupTvNext.setOnClickListener { startActivity(Intent(this, TermsActivity::class.java)) }
+    }
+
+    private fun loadNicknameDialog() {
+        if(binding.aSignupTvNext.isEnabled){
+            textNicknameCheck.text = "사용할 수 있는 닉네임입니다."
+        }else{
+            textNicknameCheck.text = "사용할 수 없는 닉네임입니다."
+        }
+        dialog.show()
+    }
+
+    private fun initNicknameDialog() {
+        dialog = Dialog(Objects.requireNonNull(this))
+        dialog.apply {
+            requestWindowFeature(Window.FEATURE_NO_TITLE)
+            window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            setContentView(R.layout.dialog_sign_up)
+        }
+        textNicknameCheck = dialog.findViewById(R.id.d_sign_up_tv_enabled_or_not)
+        btnOK = dialog.findViewById(R.id.d_sign_up_tv_ok)
+        btnOK.setOnClickListener { dialog.dismiss() }
     }
 }
