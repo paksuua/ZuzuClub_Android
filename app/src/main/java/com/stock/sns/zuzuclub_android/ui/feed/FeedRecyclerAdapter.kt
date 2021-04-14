@@ -19,8 +19,9 @@ import com.stock.sns.zuzuclub_android.databinding.ItemFeedBinding
 import com.stock.sns.zuzuclub_android.util.autolink.MODE_CUSTOM
 import com.stock.sns.zuzuclub_android.util.autolink.MODE_MENTION
 
-class FeedRecyclerAdapter(var itemlist: LiveData<ArrayList<Feed>>): RecyclerView.Adapter<FeedRecyclerAdapter.Holder>() {
-    //lateinit var itemlist : ArrayList<Feed>
+class FeedRecyclerAdapter(var itemlist: LiveData<ArrayList<Feed>>) :
+    RecyclerView.Adapter<FeedRecyclerAdapter.Holder>() {
+    // lateinit var itemlist : ArrayList<Feed>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ItemFeedBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -48,15 +49,17 @@ class FeedRecyclerAdapter(var itemlist: LiveData<ArrayList<Feed>>): RecyclerView
                 background = ShapeDrawable(OvalShape())
                 clipToOutline = true
             }
+            binding.iFeedBaseLayout.setOnClickListener {
+                Log.e("feed adapter","item click")
+            }
             binding.iFeedTvText.apply {
-                addAutoLinkMode(custom,MODE_MENTION) //멘션모드가 더보기임
+                addAutoLinkMode(custom, MODE_MENTION) // 멘션모드가 더보기임
                 onAutoLinkClick {
-                    if(it.originalText==" ...더 보기"){
-                        Log.e("feed adapter","더보기눌렀다~~~~~~")
-                    }
-                    else {
+                    if (it.originalText == " ...더 보기") {
+                        Log.e("feed adapter", "더보기눌렀다~~~~~~")
+                    } else {
                         var clickedTag = it.originalText
-                        if(clickedTag[0]==' ') clickedTag = clickedTag.substring(1)
+                        if (clickedTag[0] == ' ') clickedTag = clickedTag.substring(1)
                         Log.e("feed adapter", "tag click$clickedTag")
                     }
                 }
@@ -65,12 +68,10 @@ class FeedRecyclerAdapter(var itemlist: LiveData<ArrayList<Feed>>): RecyclerView
                 addSpan(custom, StyleSpan(Typeface.BOLD))
                 addSpan(MODE_MENTION, StyleSpan(Typeface.BOLD))
             }
-
         }
 
         fun bind(feed: Feed) {
             binding.setVariable(BR.icFeed, feed)
         }
-
     }
 }

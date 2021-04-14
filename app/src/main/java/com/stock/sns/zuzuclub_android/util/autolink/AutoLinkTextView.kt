@@ -9,10 +9,10 @@ import android.text.StaticLayout
 import android.text.style.CharacterStyle
 import android.util.AttributeSet
 import android.view.View
-import android.widget.TextView
 import java.lang.reflect.Field
 
-class AutoLinkTextView(context: Context, attrs: AttributeSet? = null) : androidx.appcompat.widget.AppCompatTextView(context, attrs) {
+class AutoLinkTextView(context: Context, attrs: AttributeSet? = null) :
+    androidx.appcompat.widget.AppCompatTextView(context, attrs) {
 
     companion object {
         internal val TAG = AutoLinkTextView::class.java.simpleName
@@ -111,7 +111,11 @@ class AutoLinkTextView(context: Context, attrs: AttributeSet? = null) : androidx
                     shift += diff
                     it.startPoint = it.startPoint - shift + diff
                     it.endPoint = it.startPoint + transformedTextLength
-                    stringBuilder.replace(it.startPoint, it.startPoint + originalTextLength, it.transformedText)
+                    stringBuilder.replace(
+                        it.startPoint,
+                        it.startPoint + originalTextLength,
+                        it.transformedText
+                    )
                 } else if (shift > 0) {
                     it.startPoint = it.startPoint - shift
                     it.endPoint = it.startPoint + it.originalText.length
@@ -156,8 +160,10 @@ class AutoLinkTextView(context: Context, attrs: AttributeSet? = null) : androidx
                             } else {
                                 group
                             }
-                            val item = AutoLinkItem(startPoint, endPoint, group,
-                                transformedText = matchedText, mode = it)
+                            val item = AutoLinkItem(
+                                startPoint, endPoint, group,
+                                transformedText = matchedText, mode = it
+                            )
                             autoLinkItems.add(item)
                         }
                     }
