@@ -46,10 +46,9 @@
 
     <View
         android:id="@+id/a_terms_v_line"
-        android:layout_width="248dp"
+        android:layout_width="234dp"
         android:layout_height="1dp"
-        android:layout_marginStart="62dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="70dp"
         android:background="@color/zuzu_black_100"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/a_terms_cb_full_consent" />
@@ -88,10 +87,25 @@
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:background="@color/zuzu_coolgrey_10"
+        android:enabled="false"
         android:gravity="center"
         android:text="다음"
         android:textColor="@color/zuzu_black_20"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="70dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="56dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
