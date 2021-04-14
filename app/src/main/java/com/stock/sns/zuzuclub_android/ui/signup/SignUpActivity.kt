@@ -6,9 +6,8 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Window
-import android.widget.Button
+import android.view.WindowManager
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
@@ -71,6 +70,7 @@ class SignUpActivity : AppCompatActivity() {
         dialog.apply {
             requestWindowFeature(Window.FEATURE_NO_TITLE)
             window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            window!!.setDimAmount(0.1F)
             setContentView(R.layout.dialog_sign_up)
         }
         textNicknameCheck = dialog.findViewById(R.id.d_sign_up_tv_enabled_or_not)
