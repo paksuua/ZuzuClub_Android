@@ -73,6 +73,14 @@
             app:layout_constraintTop_toBottomOf="@id/i_feed_iv_profile"
             tools:src="@drawable/flex_fox_72" />
 
+        <View
+            android:id="@+id/i_feed_base_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/i_feed_iv_emoji" />
+
         <com.stock.sns.zuzuclub_android.util.autolink.AutoLinkTextView
             android:id="@+id/i_feed_tv_text"
             style="@style/Contents14Regular"
@@ -87,6 +95,18 @@
             tools:text="ㅇㅡ으ㅏㅇ아아아아아아아... ㄴ아아아아" />
 
         <ImageView
+            android:id="@+id/i_feed_iv_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/single_margin"
+            android:layout_marginTop="@dimen/half_margin"
+            android:layout_marginEnd="@dimen/single_margin"
+            android:adjustViewBounds="true"
+            android:visibility="gone"
+            app:feedImage="@{icFeed.image}"
+            app:layout_constraintTop_toBottomOf="@id/i_feed_tv_text" />
+
+        <ImageView
             android:id="@+id/i_feed_iv_reaction_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -96,7 +116,7 @@
             android:src="@drawable/icon_reation_on_16"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/i_feed_tv_text" />
+            app:layout_constraintTop_toBottomOf="@id/i_feed_iv_image" />
 
         <TextView
             android:id="@+id/i_feed_tv_reaction"
@@ -110,6 +130,7 @@
             app:layout_constraintStart_toEndOf="@id/i_feed_iv_reaction_icon"
             app:layout_constraintTop_toTopOf="@id/i_feed_iv_reaction_icon"
             tools:text="123" />
+
 
         <ImageView
             android:id="@+id/i_feed_iv_comment_icon"
@@ -156,6 +177,7 @@
             android:layout_height="1dp"
             android:background="#33000000"
             app:layout_constraintBottom_toBottomOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
