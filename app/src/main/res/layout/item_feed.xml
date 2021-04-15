@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="feedVM"
+            type="com.stock.sns.zuzuclub_android.ui.feed.FeedViewModel" />
         <variable
             name="icFeed"
             type="com.stock.sns.zuzuclub_android.data.model.Feed" />
