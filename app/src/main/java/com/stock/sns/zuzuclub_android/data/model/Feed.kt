@@ -34,7 +34,7 @@ fun getDefaultFeedList() = arrayListOf(
     ),
     Feed(
         profileImage = "http://placehold.it/120x120&text=image3",
-        nickname = "방배동 살쾡이",
+        nickname = "쌍문동 불주먹",
         updated = "2시간 전",
         emojiType = 3,
         text = "이제 \$카카오 들어간다~! ",

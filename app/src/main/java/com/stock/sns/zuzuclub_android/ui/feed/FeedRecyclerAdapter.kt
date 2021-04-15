@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +23,9 @@ import com.stock.sns.zuzuclub_android.util.autolink.MODE_MENTION
 class FeedRecyclerAdapter(var itemlist: LiveData<ArrayList<Feed>>) :
     RecyclerView.Adapter<FeedRecyclerAdapter.Holder>() {
     // lateinit var itemlist : ArrayList<Feed>
+
+    // 지금 닉네임 저장할거임 --> 이거 전역으로 만들어야할거같은데 유저정보(데모는 임시)
+    var demoNickname = "쌍문동 불주먹"
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ItemFeedBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -67,6 +71,31 @@ class FeedRecyclerAdapter(var itemlist: LiveData<ArrayList<Feed>>) :
                 mentionModeColor = ContextCompat.getColor(this.context, R.color.zuzu_black_100)
                 addSpan(custom, StyleSpan(Typeface.BOLD))
                 addSpan(MODE_MENTION, StyleSpan(Typeface.BOLD))
+            }
+
+            binding.iFeedIvMore.setOnClickListener {
+                var popupMenu = PopupMenu(itemView.context, binding.iFeedIvMore)
+                if (binding.iFeedTvNickname.text == demoNickname) popupMenu.inflate(R.menu.feedlist_my_menu)
+                else popupMenu.inflate(R.menu.feedlist_other_menu)
+                popupMenu.setOnMenuItemClickListener {
+                    when (it.itemId) {
+                        R.id.menu_feedlist_block -> {
+                            Log.e("feed viewmodel","block click")
+                        }
+                        R.id.menu_feedlist_follow -> {
+                            Log.e("feed viewmodel","follow click")
+                        }
+                        R.id.menu_feedlist_delete -> {
+                            Log.e("feed viewmodel","delete click")
+                        }
+                        R.id.menu_feedlist_modify -> {
+                            Log.e("feed viewmodel","modify click")
+                        }
+                    }
+
+                    return@setOnMenuItemClickListener false
+                }
+                popupMenu.show()
             }
         }
 

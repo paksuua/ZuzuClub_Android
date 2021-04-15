@@ -21,6 +21,8 @@ class FeedViewModel : ViewModel() {
     val feedData: MutableLiveData<ArrayList<Feed>> = MutableLiveData()
     var tempList: ArrayList<Feed> = getDefaultFeedList()
 
+
+
     init {
         cutoffText() // 글자수 잘라서 더보기 붙
         feedData.postValue(tempList)
@@ -64,7 +66,8 @@ fun getProfileImage(view: ImageView, url: String) {
 fun getFeedImage(view: ImageView, url: String) {
     if (url != "") {
         view.visibility = View.VISIBLE
-        Glide.with(view.context).load(url).placeholder(R.drawable.expect_rabbit_96).centerCrop().into(view)
+        Glide.with(view.context).load(url).placeholder(R.drawable.expect_rabbit_96).centerCrop()
+            .into(view)
     } else view.visibility = View.GONE
 }
 
