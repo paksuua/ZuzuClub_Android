@@ -21,8 +21,6 @@ class FeedViewModel : ViewModel() {
     val feedData: MutableLiveData<ArrayList<Feed>> = MutableLiveData()
     var tempList: ArrayList<Feed> = getDefaultFeedList()
 
-
-
     init {
         cutoffText() // 글자수 잘라서 더보기 붙
         feedData.postValue(tempList)
