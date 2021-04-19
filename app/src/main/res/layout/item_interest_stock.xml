@@ -6,7 +6,7 @@
     android:layout_margin="8dp">
 
     <TextView
-        android:id="@+id/a_choose_stock_item_tv"
+        android:id="@+id/i_interest_stock_tv_name"
         android:layout_width="152dp"
         android:layout_height="48dp"
         android:text="종목명"

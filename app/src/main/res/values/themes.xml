@@ -15,4 +15,10 @@
         <!-- Customize your theme here. -->
         <item name="android:indeterminateTint">#ff542b</item>
     </style>
+
+    <style name="EditTextStyle" parent="android:Widget.DeviceDefault.EditText">
+        <item name="colorAccent">@color/zuzu_black_100</item>
+        <item name="colorControlNormal">@color/zuzu_black_100</item>
+    </style>
+
 </resources>

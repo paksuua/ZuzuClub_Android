@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.stock.sns.zuzuclub_android">
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />\
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,10 +11,13 @@
         android:supportsRtl="true"
         android:windowSoftInputMode="adjustResize"
         android:theme="@style/Theme.ZuzuClub_Android">
-        <activity android:name=".ui.signup.StampActivity"></activity>
+        <activity android:name=".ui.feedpost.FeedPostActivity"></activity>
+        <activity android:name=".ui.signup.StampActivity" />
         <activity android:name=".ui.signup.ChooseStockActivity" />
         <activity android:name=".ui.signup.TermsActivity" />
-        <activity android:name=".ui.signup.SignUpActivity" />
+        <activity
+            android:name=".ui.signup.SignUpActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.intro.IntroActivity" />
         <activity android:name=".ui.MainActivity">

@@ -11,7 +11,6 @@ import com.stock.sns.zuzuclub_android.R
 import com.stock.sns.zuzuclub_android.data.model.Feed
 import com.stock.sns.zuzuclub_android.data.model.getDefaultFeedList
 
-
 class FeedViewModel : ViewModel() {
 //
 //    private val _text = MutableLiveData<String>().apply {
@@ -20,17 +19,14 @@ class FeedViewModel : ViewModel() {
 //    val text: LiveData<String> = _text
 
     val feedData: MutableLiveData<ArrayList<Feed>> = MutableLiveData()
-    var tempList:ArrayList<Feed> = getDefaultFeedList()
-
+    var tempList: ArrayList<Feed> = getDefaultFeedList()
 
     init {
-        cutoffText() //글자수 잘라서 더보기 붙
+        cutoffText() // 글자수 잘라서 더보기 붙
         feedData.postValue(tempList)
     }
 
-
     fun getListItem(pos: Int) {
-
     }
 
     var onTabSelectedListener = object : TabLayout.OnTabSelectedListener {
@@ -47,24 +43,30 @@ class FeedViewModel : ViewModel() {
 
         override fun onTabReselected(tab: TabLayout.Tab?) {
         }
-
     }
 
-    fun cutoffText(){ //야매로 글자 잘라버리기
-        for(i in tempList){
-            if(i.text.length > 150){
-                i.text=i.text.substring(0,150)
-                i.text=i.text+" ...더 보기"
+    fun cutoffText() { // 야매로 글자 잘라버리기
+        for (i in tempList) {
+            if (i.text.length > 150) {
+                i.text = i.text.substring(0, 150)
+                i.text = i.text + " ...더 보기"
             }
         }
-
     }
 }
-
 
 @BindingAdapter("profileImage")
 fun getProfileImage(view: ImageView, url: String) {
     Glide.with(view.context).load(url).placeholder(R.drawable.non_profile).centerCrop().into(view)
+}
+
+@BindingAdapter("feedImage")
+fun getFeedImage(view: ImageView, url: String) {
+    if (url != "") {
+        view.visibility = View.VISIBLE
+        Glide.with(view.context).load(url).placeholder(R.drawable.expect_rabbit_96).centerCrop()
+            .into(view)
+    } else view.visibility = View.GONE
 }
 
 @BindingAdapter("emojiType")

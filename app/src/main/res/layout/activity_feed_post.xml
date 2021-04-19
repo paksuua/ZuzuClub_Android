@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.feedpost.FeedPostActivity">
+
+    <ImageView
+        android:id="@+id/i_comment_iv_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/single_margin"
+        android:layout_marginTop="@dimen/single_margin"
+        android:src="@drawable/non_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/i_comment_tv_nickname"
+        style="@style/Contents12Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/half_margin"
+        android:layout_marginTop="@dimen/single_margin"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/i_comment_iv_profile"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="방배동살쾡이" />
+
+    <TextView
+        android:id="@+id/i_comment_tv_text"
+        style="@style/Contents14Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/half_margin"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/i_comment_iv_profile"
+        app:layout_constraintTop_toBottomOf="@id/i_comment_tv_nickname"
+        tools:text="qweqweqweqweqweqweqwe" />
+
+    <TextView
+        android:id="@+id/i_comment_tv_updated"
+        style="@style/Contents11Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/half_margin"
+        app:layout_constraintStart_toEndOf="@id/i_comment_iv_profile"
+        app:layout_constraintTop_toBottomOf="@id/i_comment_tv_text"
+        tools:text="2시간 " />
+
+    <TextView
+        android:id="@+id/i_comment_tv_reaction"
+        style="@style/Contents11Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/half_margin"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/i_comment_tv_updated"
+        app:layout_constraintTop_toBottomOf="@id/i_comment_tv_text"
+        tools:text="공감하기" />
+
+    <TextView
+        android:id="@+id/i_comment_tv_reply"
+        style="@style/Contents11Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/half_margin"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/i_comment_tv_reaction"
+        app:layout_constraintTop_toBottomOf="@id/i_comment_tv_text"
+        tools:text="답글달기" />
+
+    <TextView
+        android:id="@+id/i_comment_tv_count_reaction"
+        style="@style/Contents11Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/single_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/i_comment_tv_text"
+        tools:text="2" />
+
+    <ImageView
+        android:id="@+id/i_comment_iv_reaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/half_margin"
+        android:src="@drawable/icon_reation_on_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/i_comment_tv_count_reaction" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
