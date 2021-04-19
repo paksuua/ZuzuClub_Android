@@ -57,9 +57,11 @@ class IntroActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
 
     override fun onTabSelected(tab: TabLayout.Tab?) {
         if (binding.aIntroVp.currentItem == 3) {
+            binding.aIntroTvStart.text = "시작하기"
             binding.aIntroTvStart.setTextColor(resources.getColor(R.color.zuzu_white, null))
             binding.aIntroTvStart.setBackgroundResource(R.drawable.intro_btn_start_background)
         } else {
+            binding.aIntroTvStart.text = "다음"
             binding.aIntroTvStart.setTextColor(resources.getColor(R.color.zuzu_orange, null))
             binding.aIntroTvStart.setBackgroundResource(0)
         }
