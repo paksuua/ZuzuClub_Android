@@ -31,7 +31,9 @@ class IntroActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
         tabLayout.addOnTabSelectedListener(this)
 
         binding.aIntroTvStart.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+            intent = Intent(this, LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }
     }
