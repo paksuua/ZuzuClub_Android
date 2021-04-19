@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_focused="false">
+    <item android:state_selected="true">
         <shape
             android:shape="rectangle">
             <solid
@@ -11,17 +11,25 @@
         <shape
             android:shape="rectangle">
             <solid
-                android:color="#ccffffff"/>
+                android:color="#00000000"/>
         </shape>
     </item>
-    <item android:state_hovered="false">
-        <shape
-            android:shape="rectangle">
-            <solid
-                android:color="#ccffffff"/>
-        </shape>
-    </item>
-    <item android:state_focused="true"/>
-    <item android:state_selected="true"/>
-    <item android:state_hovered="true"/>
+
+
+<!--    <item android:state_checked="false">-->
+<!--        <shape-->
+<!--            android:shape="rectangle">-->
+<!--            <solid-->
+<!--                android:color="#00FF22"/>-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--    <item android:state_checked="true">-->
+<!--        <shape-->
+<!--            android:shape="rectangle">-->
+<!--            <solid-->
+<!--                android:color="#ccffffff"/>-->
+<!--        </shape>-->
+<!--    </item>-->
 </selector>
+
+<!--    android:color="#ccffffff"-->

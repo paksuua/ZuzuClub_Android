@@ -20,6 +20,5 @@
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:checked="true"
         tools:text="기본 n" />
 </androidx.constraintlayout.widget.ConstraintLayout>

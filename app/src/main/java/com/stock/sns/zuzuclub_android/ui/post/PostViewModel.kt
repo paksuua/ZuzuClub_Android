@@ -9,13 +9,8 @@ import com.stock.sns.zuzuclub_android.data.model.*
 import com.stock.sns.zuzuclub_android.util.SingleLiveEvent
 
 class PostViewModel : ViewModel() {
-    val emojiPackData: MutableLiveData<ArrayList<EmojiPackData>> = MutableLiveData()
-
-//    val emojisData: LiveData<String>
-//    val emojisData: LiveData<EmojiPackData> = LiveData()
-//    private val _currentRingtone: MutableLiveData<RingtoneProxy> = MutableLiveData()
-
     val interestStockData: MutableLiveData<ArrayList<InterestData>> = MutableLiveData()
+    val emojisData: MutableLiveData<List<Int>> = MutableLiveData()
 
     private val _pack: MutableLiveData<EmojiPackage> = MutableLiveData(EmojiPackage.BASIC1)
     val pack: LiveData<EmojiPackage> = _pack
@@ -29,8 +24,14 @@ class PostViewModel : ViewModel() {
 
     fun onChangeSelectedPackage(itemHolder: EmojiPackData) {
         when (itemHolder.emojiPack) {
-            EmojiPackage.BASIC1 -> _showPackageTitle.postValue(itemHolder)
-            else -> _pack.postValue(itemHolder.emojiPack)
+            EmojiPackage.BASIC1 -> {
+                _showPackageTitle.postValue(itemHolder)
+                emojisData.postValue(itemHolder.getDummyPostEmojiList())
+            }
+            else -> {
+                _pack.postValue(itemHolder.emojiPack)
+                emojisData.postValue(itemHolder.getDummyPostEmojiList())
+            }
         }
     }
 
