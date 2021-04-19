@@ -93,6 +93,7 @@ class SignUpActivity : AppCompatActivity() {
             requestWindowFeature(Window.FEATURE_NO_TITLE)
             window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             window!!.setDimAmount(0.5F)
+            setCancelable(false)
             setContentView(R.layout.dialog_sign_up)
         }
         imageDialogEmotion = dialog.findViewById(R.id.d_sign_up_iv_emotion)
