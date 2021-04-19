@@ -2,6 +2,7 @@ package com.stock.sns.zuzuclub_android.ui.post
 
 import android.Manifest
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -12,6 +13,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckedTextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
@@ -21,10 +23,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.stock.sns.zuzuclub_android.R
 import com.stock.sns.zuzuclub_android.data.model.EmojiPackData
 import com.stock.sns.zuzuclub_android.databinding.FragmentPostBinding
+import com.stock.sns.zuzuclub_android.databinding.ItemPostEmojipackBinding
+import com.stock.sns.zuzuclub_android.util.SimpleDiffUtilCallback
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -36,12 +42,15 @@ import java.io.InputStream
 class PostFragment : Fragment() {
     private val viewModel by viewModels<PostViewModel>()
     private val binding by lazy { FragmentPostBinding.inflate(layoutInflater) }
-
-    var emojiPackData = MutableLiveData<ArrayList<EmojiPackData>>()
-    private lateinit var emojiPackAdapter: PostEmojiPackAdapter
+    private var emojiPackData = MutableLiveData<ArrayList<EmojiPackData>>()
+    var selectedPackage: CheckedTextView? = null
     private var isProfileImageFilled = false
     private lateinit var selectPicUri: Uri
     private var isImageChanged = false
+
+    private val emojiPackageAdapter: EmojiPackageAdapter by lazy {
+        EmojiPackageAdapter(requireContext()) { viewModel.onChangeSelectedPackage(it) }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,21 +76,29 @@ class PostFragment : Fragment() {
         }
 
         // 이모티콘 패키지
-        binding.rvPostEmojipack.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        viewModel.emojiPackData.observe(
+        binding.rvPostEmojipack.adapter = emojiPackageAdapter
+        binding.rvPostEmojipack.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvPostEmojipack.itemAnimator = null
+
+        viewModel.packageItemHolder.observe(
             viewLifecycleOwner,
             {
-                emojiPackData.value = it
-                emojiPackAdapter = PostEmojiPackAdapter(emojiPackData)
-                binding.rvPostEmojipack.adapter = emojiPackAdapter
-                emojiPackAdapter.notifyDataSetChanged()
+                emojiPackageAdapter.submitList(it)
             }
         )
 
         // 패키지별 이모티콘
-        binding.rvPostEmojis.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+//        binding.rvPostEmojipack.apply {
+//            binding.rvPostEmojis.layoutManager =
+//                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+//        }
+//        viewModel.emojiPackData.observe(
+//            viewLifecycleOwner,
+//            {
+//                emojiPackData.value = it
+//                binding.rvPostEmojipack.adapter = rvEmojiPackageAdapter
+//            }
+//        )
 
         binding.edtPost.doOnTextChanged { text1, start, count, after ->
             binding.ctvPostConfirm.isChecked = !text1.isNullOrBlank()
@@ -192,6 +209,53 @@ class PostFragment : Fragment() {
         )
 
         // viewModel.editProfile(pictureRb)
+    }
+
+    // region RecyclerView Adapter
+    inner class EmojiPackageAdapter(
+        private val context: Context,
+        private val onPackageClicked: (EmojiPackData) -> Unit
+    ) : ListAdapter<EmojiPackData, EmojiPackageViewHolder>(SimpleDiffUtilCallback()) {
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmojiPackageViewHolder {
+            return EmojiPackageViewHolder(
+                ItemPostEmojipackBinding.inflate(
+                    LayoutInflater.from(context),
+                    parent,
+                    false
+                ),
+                onPackageClicked
+            )
+        }
+
+        override fun onBindViewHolder(holder: EmojiPackageViewHolder, position: Int) {
+            holder.bind(getItem(position), position)
+        }
+    }
+
+    inner class EmojiPackageViewHolder(
+        private val binding: ItemPostEmojipackBinding,
+        private val onClick: (EmojiPackData) -> Unit
+    ) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(emojiPackage: EmojiPackData, position: Int) {
+
+            binding.cktPostPack.text = emojiPackage.getTitle()
+            binding.cktPostPack.setOnClickListener {
+                selectedPackage?.isSelected = false
+
+                // 선택 안된 인덱스
+                if (!emojiPackage.isSelected) {
+                    emojiPackage.isSelected = true
+                    binding.cktPostPack.isSelected = emojiPackage.isSelected
+                }
+
+                // 이미 선택되어있으면
+                onClick(emojiPackage)
+                selectedPackage = it as CheckedTextView
+                it.isSelected = emojiPackage.isSelected
+            }
+            binding.cktPostPack.isSelected = emojiPackage.isSelected
+        }
     }
 
     companion object {
