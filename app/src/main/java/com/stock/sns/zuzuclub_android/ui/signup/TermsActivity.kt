@@ -19,7 +19,10 @@ class TermsActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListene
     private fun initClickListener(){
         binding.aTermsIvBack.setOnClickListener { finish() }
         binding.aTermsTvNext.setOnClickListener {
-            startActivity(Intent(this, ChooseStockActivity::class.java))
+            intent = Intent(this, ChooseStockActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
         }
     }
 
