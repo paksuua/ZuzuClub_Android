@@ -1,10 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.search.SearchFragment">
 
+    <EditText
+        android:id="@+id/f_search_et"
+        style="@style/Contents14Regular"
+        android:layout_width="280dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/search_box_background"
+        android:hint="검색..."
+        android:paddingStart="8dp"
+        android:textColorHint="@color/zuzu_coolgrey_50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/f_search_tv_cancel"
+        style="@style/Contents14Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="취소"
+        android:textColor="@color/zuzu_black_100"
+        app:layout_constraintBottom_toBottomOf="@id/f_search_et"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/f_search_et"
+        app:layout_constraintTop_toTopOf="@id/f_search_et" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="304dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="352dp" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/f_search_tl"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/f_search_v_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/f_search_et"
+        app:tabIndicatorColor="@color/zuzu_orange"
+        app:tabIndicatorHeight="4dp"
+        app:tabTextAppearance="@style/Contents14Regular"
+        app:tabTextColor="@color/zuzu_black_100">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/f_search_tab_stock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            android:text="종목" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/f_search_tab_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="유저" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <View
+        android:id="@+id/f_search_v_line"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/zuzu_coolgrey_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/f_search_tl" />
+
+    <ImageView
+        android:id="@+id/f_search_iv_sticker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/flex_fox_sticker_152"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/f_search_tl" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="지금도 어떤 종목은 오르는 중..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/f_search_iv_sticker" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/f_search_rcv_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        tools:listitem="@layout/item_search_stock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/f_search_v_line"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
