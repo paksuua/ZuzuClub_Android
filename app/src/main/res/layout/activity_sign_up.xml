@@ -73,7 +73,7 @@
             android:layout_height="24dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="4dp"
-            android:enabled="false"
+            android:enabled="@{viewModel.isActivated()}"
             android:background="@drawable/signup_selector_btn"
             android:gravity="center"
             android:text="중복확인"
