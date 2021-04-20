@@ -50,10 +50,17 @@ class SignUpActivity : AppCompatActivity() {
                 binding.aSignupTvNext.setTextColor(getColor(R.color.zuzu_black_20))
             }
         })
+
+        viewModel.isActivated.observe(this, Observer {
+            binding.aSignupTvNicknameCheck.isEnabled = it
+        })
     }
 
     private fun initClickListener() {
         binding.aSignupBtnCancel.setOnClickListener { finish() }
+        binding.aSignupEtNickname.setOnFocusChangeListener { _, _ ->
+            viewModel.isActivatedState()
+        }
         binding.aSignupTvNicknameCheck.setOnClickListener {
             viewModel.isAvailableNickname()
             loadNicknameDialog()
