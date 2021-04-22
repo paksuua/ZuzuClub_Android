@@ -1,5 +1,6 @@
 package com.stock.sns.zuzuclub_android.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.stock.sns.zuzuclub_android.R
 import com.stock.sns.zuzuclub_android.data.model.HotData
 import com.stock.sns.zuzuclub_android.data.model.InterestData
 import com.stock.sns.zuzuclub_android.databinding.FragmentHomeBinding
+import com.stock.sns.zuzuclub_android.ui.home.hotranking.HotRankingActivity
 
 class HomeFragment : Fragment() {
     private val binding by lazy { FragmentHomeBinding.inflate(layoutInflater) }
@@ -74,6 +76,11 @@ class HomeFragment : Fragment() {
                 binding.rvHomeHot.adapter = HomeHotAdapter(hotData)
             }
         )
+
+        binding.tvHomeRank.setOnClickListener {
+            val intent = Intent(requireContext(), HotRankingActivity::class.java)
+            startActivity(intent)
+        }
 
         // 관심 종목
         binding.rvHomeInterest.layoutManager = GridLayoutManager(context, 2)

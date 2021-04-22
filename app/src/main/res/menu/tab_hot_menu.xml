@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_tan_happy"
+        android:icon="@drawable/flex_fox_40"
+        android:title="기쁨"/>
+    <item android:id="@+id/menu_tab_sad"
+        android:icon="@drawable/sad_lion_40"
+        android:title="슬픔"/>
+    <item android:id="@+id/menu_tab_expect"
+        android:icon="@drawable/expect_rabbit_40"
+        android:title="기대"/>
+    <item android:id="@+id/menu_tab_nervous"
+        android:icon="@drawable/nervous_horse_40"
+        android:title="불안"/>
+</menu>

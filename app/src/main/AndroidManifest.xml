@@ -15,6 +15,7 @@
         <activity android:name=".ui.signup.StampActivity" />
         <activity android:name=".ui.signup.ChooseStockActivity" />
         <activity android:name=".ui.signup.TermsActivity" />
+        <activity android:name=".ui.home.hotranking.HotRankingActivity"/>
         <activity
             android:name=".ui.signup.SignUpActivity"
             android:windowSoftInputMode="adjustResize" />
