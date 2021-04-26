@@ -16,9 +16,17 @@
         <item name="android:indeterminateTint">#ff542b</item>
     </style>
 
+    <style name="NicknameEditTextStyle">
+        <item name="colorControlNormal">@color/zuzu_black_100</item>
+        <item name="colorControlActivated">@color/zuzu_orange</item>
+        <item name="android:textColor">@color/zuzu_black_100</item>
+        <item name="android:textColorHint">@color/zuzu_orange</item>
+        <item name="android:textCursorDrawable">@color/zuzu_black_100</item>
+    </style>
+
     <style name="EditTextStyle">
         <item name="colorControlNormal">@color/zuzu_black_100</item>
-        <item name="colorControlActivated">@color/zuzu_black_100</item>
+        <item name="colorControlActivated">@color/zuzu_orange</item>
         <item name="android:textColor">@color/zuzu_black_100</item>
         <item name="android:textColorHint">@color/zuzu_black_50</item>
         <item name="android:textCursorDrawable">@color/zuzu_black_100</item>

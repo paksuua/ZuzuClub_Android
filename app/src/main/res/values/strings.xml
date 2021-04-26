@@ -6,4 +6,7 @@
     <string name="comment_number">댓글 %d개</string>
     <string name="action_number">반응 %d개</string>
     <string name="read_more">...더 보기</string>
+    <string name="nickname_rule">공백, 특수문자를 제외한 한글, 영어, 숫자로\n이루어진 닉네임을 입력해주세요.</string>
+    <string name="nickname_min_length">한글 최소 2글자, 영문 숫자 최소 4글자로\n닉네임을 지어주세요.</string>
+    <string name="nickname_special_character">공백, 특수문자를 제외해주세요.</string>
 </resources>
