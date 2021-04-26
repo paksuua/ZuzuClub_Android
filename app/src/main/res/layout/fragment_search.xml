@@ -15,7 +15,11 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/search_box_background"
         android:hint="검색..."
+        android:inputType="text"
+        android:maxLines="1"
         android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="@color/zuzu_black_100"
         android:textColorHint="@color/zuzu_coolgrey_50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -113,12 +117,12 @@
         android:id="@+id/f_search_rcv_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="invisible"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
-        tools:listitem="@layout/item_search_stock"
-        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/f_search_v_line"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        tools:listitem="@layout/item_search_stock" />
 </androidx.constraintlayout.widget.ConstraintLayout>
