@@ -41,20 +41,6 @@
         app:layout_constraintStart_toEndOf="@+id/f_search_et"
         app:layout_constraintTop_toTopOf="@id/f_search_et" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="304dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="352dp" />
-
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/f_search_tl"
         android:layout_width="0dp"
@@ -69,21 +55,7 @@
         app:tabIndicatorColor="@color/zuzu_orange"
         app:tabIndicatorHeight="4dp"
         app:tabTextAppearance="@style/Contents14Regular"
-        app:tabTextColor="@color/zuzu_black_100">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/f_search_tab_stock"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="4dp"
-            android:text="종목" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/f_search_tab_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="유저" />
-    </com.google.android.material.tabs.TabLayout>
+        app:tabTextColor="@color/zuzu_black_100"/>
 
     <View
         android:id="@+id/f_search_v_line"
