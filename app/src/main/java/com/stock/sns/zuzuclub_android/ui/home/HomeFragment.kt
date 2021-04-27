@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.MutableLiveData
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.stock.sns.zuzuclub_android.R
@@ -91,5 +92,9 @@ class HomeFragment : Fragment() {
                 binding.rvHomeInterest.adapter = HomeInterestAdapter(interestData)
             }
         )
+
+        binding.imgHomeSearch.setOnClickListener {
+            findNavController().navigate(R.id.navigation_search)
+        }
     }
 }

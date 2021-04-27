@@ -3,8 +3,10 @@ package com.stock.sns.zuzuclub_android.ui
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -30,12 +32,13 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fcv_main) as NavHostFragment
         val navController = navHostFragment.navController
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.navigation_post) {
+            if (destination.id == R.id.navigation_post || destination.id == R.id.navigation_search) {
                 binding.btnvView.visibility = View.GONE
             } else {
                 binding.btnvView.visibility = View.VISIBLE
             }
         }
+
         binding.btnvView.setupWithNavController(navController)
         binding.btnvView.itemIconTintList = null
     }
