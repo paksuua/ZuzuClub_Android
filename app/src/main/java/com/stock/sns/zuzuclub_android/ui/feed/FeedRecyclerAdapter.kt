@@ -1,5 +1,6 @@
 package com.stock.sns.zuzuclub_android.ui.feed
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.graphics.drawable.ShapeDrawable
@@ -17,6 +18,7 @@ import com.stock.sns.zuzuclub_android.BR
 import com.stock.sns.zuzuclub_android.R
 import com.stock.sns.zuzuclub_android.data.model.Feed
 import com.stock.sns.zuzuclub_android.databinding.ItemFeedBinding
+import com.stock.sns.zuzuclub_android.ui.feedpost.FeedPostActivity
 import com.stock.sns.zuzuclub_android.util.autolink.MODE_CUSTOM
 import com.stock.sns.zuzuclub_android.util.autolink.MODE_MENTION
 
@@ -54,7 +56,9 @@ class FeedRecyclerAdapter(var itemlist: LiveData<ArrayList<Feed>>) :
                 clipToOutline = true
             }
             binding.iFeedBaseLayout.setOnClickListener {
-                Log.e("feed adapter","item click")
+                Log.e("feed adapter", "item click")
+                val intent = Intent(it.context, FeedPostActivity::class.java)
+                it.context.startActivity(intent)
             }
             binding.iFeedTvText.apply {
                 addAutoLinkMode(custom, MODE_MENTION) // 멘션모드가 더보기임
@@ -80,16 +84,16 @@ class FeedRecyclerAdapter(var itemlist: LiveData<ArrayList<Feed>>) :
                 popupMenu.setOnMenuItemClickListener {
                     when (it.itemId) {
                         R.id.menu_feedlist_block -> {
-                            Log.e("feed viewmodel","block click")
+                            Log.e("feed viewmodel", "block click")
                         }
                         R.id.menu_feedlist_follow -> {
-                            Log.e("feed viewmodel","follow click")
+                            Log.e("feed viewmodel", "follow click")
                         }
                         R.id.menu_feedlist_delete -> {
-                            Log.e("feed viewmodel","delete click")
+                            Log.e("feed viewmodel", "delete click")
                         }
                         R.id.menu_feedlist_modify -> {
-                            Log.e("feed viewmodel","modify click")
+                            Log.e("feed viewmodel", "modify click")
                         }
                     }
 
