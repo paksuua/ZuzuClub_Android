@@ -13,7 +13,6 @@ import com.stock.sns.zuzuclub_android.data.model.Feed
 import com.stock.sns.zuzuclub_android.databinding.FragmentFeedBinding
 import com.stock.sns.zuzuclub_android.util.CustomScroll
 
-
 class FeedFragment : Fragment(), CustomScroll.onLoadMore {
     private val binding by lazy { FragmentFeedBinding.inflate(layoutInflater) }
     private val viewModel by viewModels<FeedViewModel>()
@@ -22,7 +21,6 @@ class FeedFragment : Fragment(), CustomScroll.onLoadMore {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -30,9 +28,9 @@ class FeedFragment : Fragment(), CustomScroll.onLoadMore {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //binding.fFeedTablayout.addOnTabSelectedListener(viewModel.onTabSelectedListener)
+        // binding.fFeedTablayout.addOnTabSelectedListener(viewModel.onTabSelectedListener)
 
-        myscroll = CustomScroll(this) //스크롤 설정
+        myscroll = CustomScroll(this) // 스크롤 설정
         myscroll.setLoaded()
 
         binding.fFeedRcvList.apply {
@@ -40,8 +38,7 @@ class FeedFragment : Fragment(), CustomScroll.onLoadMore {
             addOnScrollListener(myscroll)
         }
 
-
-        //viewmodel의 값 바뀌면 livedata 로직 실행
+        // viewmodel의 값 바뀌면 livedata 로직 실행
         val dataObserver: Observer<ArrayList<Feed>> =
             Observer { livedata ->
                 data.value = livedata

@@ -28,12 +28,12 @@ class AutoLinkTextView(context: Context, attrs: AttributeSet? = null) :
     private var urlProcessor: ((String) -> String)? = null
 
     var pressedTextColor = Color.LTGRAY
-    var mentionModeColor = DEFAULT_COLOR
+    var mentionModeColor = Color.BLACK
     var hashTagModeColor = DEFAULT_COLOR
     var customModeColor = DEFAULT_COLOR
     var phoneModeColor = DEFAULT_COLOR
     var emailModeColor = DEFAULT_COLOR
-    var urlModeColor = DEFAULT_COLOR
+    var urlModeColor = Color.GREEN
 
     init {
         highlightColor = Color.TRANSPARENT
